@@ -3,7 +3,7 @@
    =================================== */
 :root {
     /* カラーパレットの変数定義 */
-    --background-color: #ECDFCF; /* #ECDFCF - メインの背景色 */
+    --background-color: #fffdfa /* #fffdfa - メインの背景色 */
     --main-text-color: #A4927E;  /* #A4927E - 主要なテキストの色 */
     --accent-color: #BF7D65;     /* #BF7D65 - 強調色（リンク、ホバー） */
     --heading-color: #C1A790;    /* #C1A790 - 見出しの色 */
