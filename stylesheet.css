@@ -1,0 +1,268 @@
+/* ===================================
+   基本設定とリセット
+   =================================== */
+:root {
+    /* カラーパレットの変数定義 */
+    --background-color: #ECDFCF; /* #ECDFCF - メインの背景色 */
+    --main-text-color: #A4927E;  /* #A4927E - 主要なテキストの色 */
+    --accent-color: #BF7D65;     /* #BF7D65 - 強調色（リンク、ホバー） */
+    --heading-color: #C1A790;    /* #C1A790 - 見出しの色 */
+    --secondary-color: #BBB88D;  /* #BBB88D - 補助的な情報、影の色 */
+}
+
+/* 全ての要素のマージンとパディングをリセットし、border-boxでサイズ計算を容易にする */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', 'Hiragino Kaku Gothic ProN', sans-serif;
+    line-height: 1.6;
+    /* メインのテキスト色を設定 */
+    color: var(--main-text-color);
+    /* サイト全体に温かい背景色を設定 */
+    background-color: var(--background-color);
+}
+
+/* リンクの装飾 */
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: var(--main-text-color); /* ホバーで少し落ち着いた色に変化 */
+}
+
+/* ===================================
+   レイアウトと共通要素
+   =================================== */
+
+/* コンテンツを中央に寄せ、最大幅を設定 */
+main, header, footer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* セクションの共通スタイル */
+section {
+    padding: 60px 0;
+    margin-bottom: 40px;
+    /* 境界線に補助的な色を使用 */
+    border-bottom: 1px solid var(--secondary-color);
+}
+
+section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5em;
+    font-weight: 700;
+    /* 見出し色を設定 */
+    color: var(--heading-color);
+}
+
+/* ===================================
+   ヘッダーとナビゲーション
+   =================================== */
+header {
+    background-color: var(--background-color); /* 背景色と合わせる */
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* 影に補助的な色を使用し、優しい印象に */
+    box-shadow: 0 2px 4px rgba(187, 184, 141, 0.3);
+}
+
+header h1 {
+    font-size: 1.8em;
+    margin: 0;
+    letter-spacing: 1px;
+    color: var(--heading-color);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    font-weight: 600;
+    color: var(--main-text-color);
+}
+
+nav ul li a:hover {
+    color: var(--accent-color);
+}
+
+/* ===================================
+   ヒーローセクション
+   =================================== */
+.hero-section {
+    text-align: center;
+    padding: 80px 20px;
+    /* 背景色で統一感を出す */
+    background-color: var(--background-color);
+}
+
+.hero-section h2 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    color: var(--heading-color);
+}
+
+.hero-section p {
+    font-size: 1.2em;
+    color: var(--main-text-color);
+}
+
+/* ===================================
+   ギャラリーセクション (作品カード)
+   =================================== */
+.artwork-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 0 20px;
+}
+
+.artwork-item {
+    background-color: #ffffff; /* 作品が際立つよう、白（または非常に薄い色）を維持 */
+    border-radius: 8px;
+    /* 影に補助的な色とメインのテキスト色を使用 */
+    box-shadow: 0 4px 12px rgba(164, 146, 126, 0.15);
+    overflow: hidden; 
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.artwork-item:hover {
+    transform: translateY(-5px); 
+    /* ホバーでより濃い影（メインのテキスト色）を適用 */
+    box-shadow: 0 8px 20px rgba(164, 146, 126, 0.3);
+}
+
+.artwork-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.artwork-item h3 {
+    padding: 15px 15px 5px;
+    font-size: 1.2em;
+    color: var(--heading-color);
+}
+
+.artwork-item .description, .artwork-item .creation-date {
+    padding: 0 15px 15px;
+    font-size: 0.9em;
+    color: var(--secondary-color); /* 補助的なテキストはセカンダリーカラーで */
+}
+
+/* ===================================
+   プロフィールセクション
+   =================================== */
+.profile-content {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; 
+    object-fit: cover;
+    /* 枠線にアクセントカラーを使用 */
+    border: 3px solid var(--accent-color);
+}
+
+.bio h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: var(--heading-color);
+}
+
+.bio h4 {
+    margin-top: 20px;
+    margin-bottom: 5px;
+    /* 強調色を使用 */
+    color: var(--accent-color);
+}
+
+.bio ul {
+    list-style: disc;
+    margin-left: 20px;
+}
+
+/* ===================================
+   フッター
+   ================================== */
+footer {
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid var(--secondary-color);
+    color: var(--main-text-color);
+}
+
+/* ===================================
+   メディアクエリ (レスポンシブデザイン)
+   =================================== */
+
+/* タブレット (幅768px以下) */
+@media (max-width: 768px) {
+    /* ... 以前のレスポンシブ設定を維持 ... */
+    .artwork-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        margin-top: 10px;
+        justify-content: center;
+    }
+    
+    nav ul li {
+        margin: 0 10px;
+    }
+
+    .profile-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+/* スマートフォン (幅480px以下) */
+@media (max-width: 480px) {
+    .artwork-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    section h2 {
+        font-size: 2em;
+    }
+
+    .hero-section h2 {
+        font-size: 2.5em;
+    }
+
+    /* ナビゲーションを非表示にするか、ハンバーガーメニューに切り替える */
+    /* nav { display: none; } */ 
+}
