@@ -17,6 +17,10 @@
     box-sizing: border-box;
 }
 
+header {
+   height:100px;
+}
+
 body {
     font-family: 'Arial', 'Hiragino Kaku Gothic ProN', sans-serif;
     line-height: 1.6;
