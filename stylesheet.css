@@ -47,7 +47,6 @@ a:hover {
 
 /* コンテンツを中央に寄せ、最大幅を設定 */
 main, header, footer {
-    max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
